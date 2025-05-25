@@ -231,18 +231,18 @@ public abstract partial class InteractionTest
         });
 
         // Ensure that the player only has one hand, so that they do not accidentally pick up deconstruction products
-        await Server.WaitPost(() =>
-        {
+      //  await Server.WaitPost(() =>
+       // {
             // I lost an hour of my life trying to track down how the hell interaction tests were breaking
             // so greatz to this. Just make your own body prototype!
-            var bodySystem = SEntMan.System<BodySystem>();
-            var hands = bodySystem.GetBodyChildrenOfType(SEntMan.GetEntity(Player), Initia.Hand).ToArray();
+      //      var bodySystem = SEntMan.System<BodySystem>();
+      //      var hands = bodySystem.GetBodyChildrenOfType(SEntMan.GetEntity(Player), Initia.Hand).ToArray();
 
-            for (var i = 1; i < hands.Length; i++)
-            {
-                SEntMan.DeleteEntity(hands[i].Id);
-            }
-        });
+      //      for (var i = 1; i < hands.Length; i++)
+      //      {
+     //           SEntMan.DeleteEntity(hands[i].Id);
+      //      }
+      //  });
 
         // Change UI state to in-game.
         var state = Client.ResolveDependency<IStateManager>();
